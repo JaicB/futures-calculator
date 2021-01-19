@@ -1,5 +1,5 @@
 import axios from 'axios';
-import e from 'express';
+// import express from 'express';
 import React, { Component } from 'react'
 
 class Favorites extends Component {
@@ -10,7 +10,7 @@ class Favorites extends Component {
       notes: "",
       input: ""
     }
-    this.input = this.input.bind(this)
+    // this.input = this.input.bind(this)
   }
 
   updateFavorites = (id) => {
@@ -30,11 +30,12 @@ class Favorites extends Component {
     })
   }
 
-  addNote = (e) => {
-    this.setState({
-      input: e.target.value
-    })
-  }
+  // addNote() {
+  //   const inputNote = this.state.inputNote 
+  //   this.setState({
+  //     inputNote
+  //   })
+  // }
 
   render() {
     console.log(this.props.favs)
@@ -46,8 +47,9 @@ class Favorites extends Component {
             <span onClick={() => this.deleteFromFavorites(element.id)}>X</span>
             <span>{element.future}</span>
             <span>{element.glbx_symbol}</span>
-            <input className='favs_input' placeholder="Add notes here:" onChange={this.addNote()}/>
-            <button onClick={(e) => this.addNote()}>Add</button>
+            <input className='favs_input' placeholder="Add notes here:"/>
+            <button onClick={(e) => {this.updateFavorites(element.id)}}>Add</button>
+            <h4>{this.state.notes}</h4>
           </div>
           }
         )}

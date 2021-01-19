@@ -1,4 +1,3 @@
-import axios from 'axios';
 import React, { Component } from 'react'
 
 class Calculator extends Component {
@@ -12,18 +11,21 @@ class Calculator extends Component {
       contracts: '',
       potentialReward: '',
       potentialRisk: '',
-      rewardRisk: ''
+      rewardRisk: '',
+      showDetails: false
     }
   }
 
   calculate() {
     const potentialReward = ((this.state.target - this.state.entry) * this.state.contracts * this.props.details.point_value)
     const potentialRisk = ((this.state.entry - this.state.stop) * this.state.contracts * this.props.details.point_value)
-    const rewardRisk = ((this.state.target - this.state.entry)/(this.state.entry - this.state.stop))
+    const rewardRisk = ((this.state.target - this.state.entry) / (this.state.entry - this.state.stop))
+
     this.setState({
       potentialReward,
       potentialRisk,
-      rewardRisk
+      rewardRisk,
+      showDetails: true
     })
   }
 
@@ -48,12 +50,16 @@ class Calculator extends Component {
           </select>
         </div>
         <button onClick={(e) => this.calculate()}>Calculate</button>
-        <div>
-          <h4>${this.state.potentialReward}</h4>
-          <h4>${this.state.potentialRisk}</h4>
-          <h4>{this.state.rewardRisk} : 1</h4>
-          <h4>{this.props.details.tick_value}</h4>
-        </div>
+        {
+          this.state.showDetails ? (
+            <div>
+              <h4>${this.state.potentialReward}</h4>
+              <h4>${this.state.potentialRisk}</h4>
+              <h4>{this.state.rewardRisk} : 1</h4>
+              <h4>{this.props.details.tick_value}</h4>
+            </div>
+          ) : null
+        }
       </div >
     )
   }

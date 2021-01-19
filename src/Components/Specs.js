@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import Axios from 'axios'
 import axios from 'axios';
 
 class Specs extends Component {
@@ -27,15 +26,29 @@ class Specs extends Component {
           <table>
             <tr>
               <th>Futures name</th>
-              <th>Column 2</th>
-              <th>Column 3</th>
+              <th>Globex Symbol</th>
+              <th>Market</th>
+              <th>Contract Months</th>
+              <th>Trading Hours</th>
+              <th>Tick</th>
+              <th>Tick Values</th>
+              <th>Ticks Per Point</th>
+              <th>Point Value</th>
+              <th>Exchange</th>
             </tr>
             {this.state.specs.map((element) => {
               return (
                 <tr>
-                  <td>{element.futures}</td>
-                  <td>row - detail</td>
-                  <td>row - detail</td>
+                  <td>{element.future}</td>
+                  <td>{element.glbx_symbol}</td>
+                  <td>{element.market}</td>
+                  <td>{element.contract_months}</td>
+                  <td>{element.trade_hours}</td>
+                  <td>{element.tick}</td>
+                  <td>{element.tick_value}</td>
+                  <td>{element.tick_per_point}</td>
+                  <td>{element.point_value}</td>
+                  <td>{element.exchange}</td>
                 </tr>
               )
             })}
