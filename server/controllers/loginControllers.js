@@ -11,7 +11,7 @@ module.exports = {
         if (response.length) {
           bcrypt.compare(password, response[0].password).then(passwordsMatch => {
             if (passwordsMatch) {
-              req.session.user = { user: response[0] };
+              req.session.user = response[0];
               res.status(200).send({ user: req.session.user });
             } else {
               res.status(403).send({ errorMessage: 'Wrong password' })
@@ -34,14 +34,14 @@ module.exports = {
     const saltRounds = 12;
 
     bcrypt.hash(password, saltRounds).then((hashedPassword) => {
-      dbInstance.create_user(full_name, email_address, hashedPassword)
-        .then((response) => {
-          res.status(200).send({user_email: response[0].email_address})
-        })
-        .catch(err => {
-          res.status(500).send({ errorMessage: "Failed to create user." });
-          console.log(err)
-        });
+        dbInstance.create_user(full_name, email_address, hashedPassword)
+          .then((response) => {
+            res.status(200).send({user_email: response[0].email_address})
+          })
+          .catch(err => {
+            res.status(500).send({ errorMessage: "Failed to create user." });
+            console.log(err)
+          });
       }).catch(err => {
         console.log({err})
         res.status(500).json({ errorMessage: 'Failed to hash password'})

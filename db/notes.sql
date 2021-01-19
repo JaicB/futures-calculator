@@ -21,8 +21,8 @@ exchange varchar
 );
 
 CREATE TABLE pp_user_favorites (
-id integer,
-user_id integer REFERENCES pp_users (id),
+id SERIAL PRIMARY KEY,
+user_id INTEGER references pp_users(id),
 future varchar,
 glbx_symbol varchar,
 contract_months varchar,
