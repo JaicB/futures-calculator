@@ -32,34 +32,33 @@ class Calculator extends Component {
   render() {
     return (
       <div className='calculator'>
-        <h4>Calculator Placeholder</h4>
-        <div>
-          <div>
-            <span>Entry</span>
+        <div className="calc-container">
+          <div className="section-header"><h3>Calculator</h3></div>
+          <div className="calc-details">
             <input onChange={(e) => this.setState({ entry: e.target.value })} placeholder="Entry" />
-          </div>
-          <input onChange={(e) => this.setState({ target: e.target.value })} placeholder="Target" />
-          <input onChange={(e) => this.setState({ stop: e.target.value })} placeholder="Stop" />
-          <select onChange={(e) => this.setState({ contracts: e.target.value })}>
-            <option value={""}># of Contracts</option>
-            <option value={1}>1</option>
-            <option value={2}>2</option>
-            <option value={3}>3</option>
-            <option value={4}>4</option>
-            <option value={5}>5</option>
-          </select>
-        </div>
-        <button onClick={(e) => this.calculate()}>Calculate</button>
+            <input onChange={(e) => this.setState({ target: e.target.value })} placeholder="Target" />
+            <input onChange={(e) => this.setState({ stop: e.target.value })} placeholder="Stop" />
+            <select className="calc-select" onChange={(e) => this.setState({ contracts: e.target.value })}>
+              <option value={""}># of Contracts</option>
+              <option value={1}>1</option>
+              <option value={2}>2</option>
+              <option value={3}>3</option>
+              <option value={4}>4</option>
+              <option value={5}>5</option>
+            </select>
         {
           this.state.showDetails ? (
             <div>
-              <h4>${this.state.potentialReward}</h4>
-              <h4>${this.state.potentialRisk}</h4>
-              <h4>{this.state.rewardRisk} : 1</h4>
-              <h4>{this.props.details.tick_value}</h4>
+              <h4>Reward: ${this.state.potentialReward}</h4>
+              <h4>Risk: ${this.state.potentialRisk}</h4>
+              <h4>Reward/Risk: {this.state.rewardRisk} : 1</h4>
+              <h4>Tick Value: {this.props.details.tick_value}</h4>
             </div>
           ) : null
         }
+          </div>
+          <button className="button"onClick={(e) => this.calculate()}>Calculate</button>
+        </div>
       </div >
     )
   }

@@ -21,11 +21,11 @@ class Specs extends Component {
 
   render() {
     return (
-      <div className='specs'>
-        <h2>Specs Placeholder</h2>
-          <table>
+      <div className='Specs'>
+        <h2 style={{ padding: "5px", margin: "15px 0px 15px"}}>Futures Specs Table</h2>
+          <table className="specs_table">
             <tr>
-              <th>Futures name</th>
+              <th>Futures Name</th>
               <th>Globex Symbol</th>
               <th>Market</th>
               <th>Contract Months</th>

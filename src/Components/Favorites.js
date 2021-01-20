@@ -10,7 +10,6 @@ class Favorites extends Component {
       notes: "",
       input: ""
     }
-    // this.input = this.input.bind(this)
   }
 
   updateFavorites = (id) => {
@@ -30,30 +29,32 @@ class Favorites extends Component {
     })
   }
 
-  // addNote() {
-  //   const inputNote = this.state.inputNote 
-  //   this.setState({
-  //     inputNote
-  //   })
-  // }
-
   render() {
     console.log(this.props.favs)
     return (
-      <div className='favorites'>
-        <h4>Favorite Futures</h4>
-        {this.props.favs.map((element) => {
-          return <div>
-            <span onClick={() => this.deleteFromFavorites(element.id)}>X</span>
-            <span>{element.future}</span>
-            <span>{element.glbx_symbol}</span>
-            <input className='favs_input' placeholder="Add notes here:"/>
-            <button onClick={(e) => {this.updateFavorites(element.id)}}>Add</button>
-            <h4>{this.state.notes}</h4>
+        <div className="favorite-container">
+            <div className="section-header"><h3>Favorite Futures</h3></div>
+          <div className="favorite-details">
+            {this.props.favs.map((element) => {
+              return (
+                  <div className="favorite-entry">
+                    <div className="favorite-entry-details">
+                      <span onClick={() => this.deleteFromFavorites(element.id)}>X</span>
+                      <span>{element.future}</span>
+                      <span>{element.glbx_symbol}</span>
+                      <h4>Notes: {element.notes}</h4>
+                    </div>
+                    <div className="new-notes">
+                      <textarea className='favs_input' placeholder="Add notes here:" onChange={(e) => this.setState({notes: e.target.value})}/>
+                      <button className="save-notes" onClick={(e) => {this.updateFavorites(element.id)}}>Add</button>
+                    </div>
+                  </div>
+                )
+              }
+            )}
           </div>
-          }
-        )}
-      </div>
+
+        </div>
     )
   }
 }

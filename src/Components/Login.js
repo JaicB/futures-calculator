@@ -12,7 +12,7 @@ const Login = (props) => {
       .then((results) => {
         props.history.replace('/home')
       }).catch(e => {
-       setError('Failed to login') 
+        setError('Failed to login')
       })
   }
 
@@ -34,18 +34,35 @@ const Login = (props) => {
 
   return (
     <div className='Login'>
+      <h2>Already have an account</h2>
       <div className="login_user">
-        <h2>Login Placeholder</h2>
-        <input className='email_address' onChange={(e) => setEmail(e.target.value)} />
-        <input className='password' onChange={(e) => setPassword(e.target.value)} />
-        <button className='submit' onClick={(e) => login()}>Submit</button>
+        <input className='email_address' placeholder="Email Address"
+          style={{ padding: "5px" }}
+          onChange={(e) => setEmail(e.target.value)} />
+        <input className='password' placeholder="Password"
+          style={{ padding: "5px", margin: "15px 0px 0px" }}
+          onChange={(e) => setPassword(e.target.value)} />
+        <button className='submit'
+          style={{ padding: "5px" }}
+          onClick={(e) => login()}>Submit</button>
       </div>
+      <h2>Need an account?</h2>
       <div className="create_user">
-        <h2>Create User Placeholder</h2>
-        <input className="full_name" onChange={(e) => setFullName(e.target.value)} />
-        <input className="email_address" onChange={(e) => setEmail(e.target.value)} />
-        <input className="password" onChange={(e) => setPassword(e.target.value)} />
-        <button className="create" onClick={(e) => createNewUser()}>Create Account</button>
+        <input className="full_name"
+        placeholder="Full Name"
+          style={{ padding: "5px" }}
+          onChange={(e) => setFullName(e.target.value)} />
+        <input className="email_address"
+        placeholder="Email Address / Login"
+          style={{ padding: "5px", margin: "15px 0px"}}
+          onChange={(e) => setEmail(e.target.value)} />
+        <input className="password"
+        placeholder="Password"
+          style={{ padding: "5px"}}
+          onChange={(e) => setPassword(e.target.value)} />
+        <button className="create"
+          style={{ padding: "5px" }}
+          onClick={(e) => createNewUser()}>Create Account</button>
       </div>
       {error && <span>{error}</span>}
       {/* <div className="update_user">
