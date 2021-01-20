@@ -8,6 +8,7 @@ const session = require('express-session');
 const bcrypt = require('bcryptjs');
 
 const app = express();
+app.use(express.static(`${__dirname}/../build`));
 app.use(express.json());
 
 app.use(session({
