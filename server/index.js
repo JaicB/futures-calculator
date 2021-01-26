@@ -21,6 +21,8 @@ const { SERVER_PORT, CONNECTION_STRING } = process.env
 
 //Login endpoints
 app.post('/api/login', loginCtrl.login); //done
+
+
 app.post('/api/user', loginCtrl.createUser); //done
 app.put('/api/user', loginCtrl.updateUser); 
 

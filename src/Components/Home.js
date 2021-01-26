@@ -1,6 +1,11 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import img from '../mini_specs_table.jpg'
+import img2 from '../currency.png'
+import img3 from '../bond.png'
+import img5 from '../metals.png'
+import img4 from '../equity.png'
+import img6 from '../energy.png'
 
 class Home extends Component {
   constructor() {
@@ -26,11 +31,34 @@ class Home extends Component {
       <div className="Home">
         <div className="markets">
           <h2>Market Type</h2>
-          <ol style={{ padding: "10px" }}>Select a Market below to utilize Futures calculator.</ol>
-          {this.state.markets.map((element) => {
+          <ol style={{ padding: "10px" }}>Select a Market below to utilize our Futures calculator.</ol>
+          <div className="icon-image">
+            <li>
+              <img className="icon-image" src={img2} onClick={() => { this.props.history.push(`/futuresDetails/Currencies`) }} />
+              <p>Currency</p>
+            </li>
+            <li>
+              <img className="icon-image" src={img3} onClick={() => { this.props.history.push(`/futuresDetails/Bonds`) }} />
+              <p>Bonds</p>
+            </li>
+            <li>
+              <img className="icon-image" src={img5} onClick={() => { this.props.history.push(`/futuresDetails/Metals`) }} />
+              <p>Metals</p>
+            </li>
+            <li>
+              <img className="icon-image" src={img4} onClick={() => { this.props.history.push(`/futuresDetails/Equity`) }} />
+              <p>Equity</p>
+            </li>
+            <li>
+              <img className="icon-image" src={img6} onClick={() => { this.props.history.push(`/futuresDetails/Energy`) }} />
+              <p>Energy</p>
+            </li>
+          </div>
+
+          {/* {this.state.markets.map((element) => {
             return <li style={{ padding: "5px" }}
-            onClick={() => { this.props.history.push(`/futuresDetails/${element}`) }}>{element}</li>
-          })}
+              onClick={() => { this.props.history.push(`/futuresDetails/${element}`) }}>{element}</li>
+          })} */}
         </div>
         {/* <div className="mini_calc">
         <h2>Calculator Placeholder</h2>
@@ -43,9 +71,9 @@ class Home extends Component {
         </form>
       </div> */}
         <div className="mini_table">
-          <h2>SpecsTable Placeholder</h2>
-          <p style={{ padding: "10px" }}>Click below to view our Specs Table. This is a breakdown of select Futures contracts and their components.</p>
-          <img className="image" src={img} onClick={() => { this.props.history.push(`/specs`) }}/>
+          <h2>Specs Table</h2>
+          <p style={{ padding: "10px" }}>Click below to view our Specs Table. This is a breakdown of select Futures contracts and their elements.</p>
+          <img className="image-specs" src={img} onClick={() => { this.props.history.push(`/specs`) }} />
         </div>
       </div>
     )

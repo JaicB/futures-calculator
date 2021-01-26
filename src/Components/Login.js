@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios'
+import img7 from '../futures_toolbox.png'
 
 const Login = (props) => {
   const [email_address, setEmail] = useState('');
@@ -34,35 +35,41 @@ const Login = (props) => {
 
   return (
     <div className='Login'>
-      <h2>Already have an account</h2>
-      <div className="login_user">
-        <input className='email_address' placeholder="Email Address"
-          style={{ padding: "5px" }}
-          onChange={(e) => setEmail(e.target.value)} />
-        <input className='password' placeholder="Password"
-          style={{ padding: "5px", margin: "15px 0px 0px" }}
-          onChange={(e) => setPassword(e.target.value)} />
-        <button className='submit'
-          style={{ padding: "5px" }}
-          onClick={(e) => login()}>Submit</button>
+      <div>
+        <h2>Already have an account</h2>
+        <div className="login_user">
+          <input className='email_address' placeholder="Email Address"
+            style={{ padding: "5px" }}
+            onChange={(e) => setEmail(e.target.value)} />
+          <input className='password' placeholder="Password"
+            style={{ padding: "5px", margin: "15px 0px 0px" }}
+            onChange={(e) => setPassword(e.target.value)} />
+          <button className='submit'
+            style={{ padding: "5px" }}
+            onClick={(e) => login()}>Submit</button>
+        </div>
+        <h2>Need an account?</h2>
+        <div className="create_user">
+          <input className="full_name"
+            placeholder="Full Name"
+            style={{ padding: "5px" }}
+            onChange={(e) => setFullName(e.target.value)} />
+          <input className="email_address"
+            placeholder="Email Address / Login"
+            style={{ padding: "5px", margin: "15px 0px" }}
+            onChange={(e) => setEmail(e.target.value)} />
+          <input className="password"
+            placeholder="Password"
+            style={{ padding: "5px" }}
+            onChange={(e) => setPassword(e.target.value)} />
+          <button className="create"
+            style={{ padding: "5px" }}
+            onClick={(e) => createNewUser()}>Create Account</button>
+        </div>
       </div>
-      <h2>Need an account?</h2>
-      <div className="create_user">
-        <input className="full_name"
-        placeholder="Full Name"
-          style={{ padding: "5px" }}
-          onChange={(e) => setFullName(e.target.value)} />
-        <input className="email_address"
-        placeholder="Email Address / Login"
-          style={{ padding: "5px", margin: "15px 0px"}}
-          onChange={(e) => setEmail(e.target.value)} />
-        <input className="password"
-        placeholder="Password"
-          style={{ padding: "5px"}}
-          onChange={(e) => setPassword(e.target.value)} />
-        <button className="create"
-          style={{ padding: "5px" }}
-          onClick={(e) => createNewUser()}>Create Account</button>
+
+      <div>
+        <img className="ft-logo" src={img7} onClick={() => { this.props.history.push(`/futuresDetails/Bonds`) }} />
       </div>
       {error && <span>{error}</span>}
       {/* <div className="update_user">
