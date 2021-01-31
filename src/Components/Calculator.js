@@ -52,7 +52,7 @@ class Calculator extends Component {
               <h4>Reward: ${this.state.potentialReward}</h4>
               <h4>Risk: ${this.state.potentialRisk}</h4>
               <h4>Reward/Risk: {this.state.rewardRisk} : 1</h4>
-              <h4>Tick Value: {this.props.details.tick_value}</h4>
+              <h4>Tick Value: ${this.props.details.tick_value}</h4>
             </div>
           ) : null
         }

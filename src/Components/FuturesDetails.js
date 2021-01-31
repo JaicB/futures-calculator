@@ -47,7 +47,7 @@ class FuturesDetails extends Component {
         
         {/* select */}
         <div className="select-view">
-          <p>Select Futures from the dropdown to set up the calculator</p>
+          <h5>Select Futures from the dropdown to set up the calculator</h5>
           <select onChange={(e) => {
             const future = this.state.futures.filter(element => element.id == e.target.value)
             return this.setState({ selectedFuture: future[0] })
@@ -67,11 +67,11 @@ class FuturesDetails extends Component {
             <div className="section-header"><h3>Symbol Details</h3></div>
             <div className="symbol-details">
               <h4>{this.state.selectedFuture.future}</h4>
-              <h4>{this.state.selectedFuture.glbx_symbol}</h4>
-              <h4>{this.state.selectedFuture.contract_months}</h4>
-              <h4>{this.state.selectedFuture.tick}</h4>
-              <h4>{this.state.selectedFuture.tick_value}</h4>
-              <h4>{this.state.selectedFuture.point_value}</h4>
+              <h4>Globex Symbol: {this.state.selectedFuture.glbx_symbol}</h4>
+              <h4>Months: {this.state.selectedFuture.contract_months}</h4>
+              <h4>Tick: {this.state.selectedFuture.tick}</h4>
+              <h4>Tick Value: {this.state.selectedFuture.tick_value}</h4>
+              <h4>Point Value: {this.state.selectedFuture.point_value}</h4>
             </div>
           </div>
           <button className="button" onClick={(e) => {

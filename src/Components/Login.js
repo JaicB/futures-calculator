@@ -38,10 +38,14 @@ const Login = (props) => {
       <div>
         <h2>Already have an account</h2>
         <div className="login_user">
-          <input className='email_address' placeholder="Email Address"
+          <input
+            className='email_address'
+            placeholder="Email Address"
             style={{ padding: "5px" }}
             onChange={(e) => setEmail(e.target.value)} />
-          <input className='password' placeholder="Password"
+          <input
+            className='password'
+            placeholder="Password"
             style={{ padding: "5px", margin: "15px 0px 0px" }}
             onChange={(e) => setPassword(e.target.value)} />
           <button className='submit'
@@ -69,7 +73,7 @@ const Login = (props) => {
       </div>
 
       <div>
-        <img className="ft-logo" src={img7} onClick={() => { this.props.history.push(`/futuresDetails/Bonds`) }} />
+        <img className="ft-logo" src={img7} alt="Futures Toolbox" />
       </div>
       {error && <span>{error}</span>}
       {/* <div className="update_user">

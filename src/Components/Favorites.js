@@ -14,47 +14,47 @@ class Favorites extends Component {
 
   updateFavorites = (id) => {
     axios.put(`/api/favorites/${id}`, { notes: this.state.notes })
-    .then((results) => {
-      this.setState({
-        notes: ""
+      .then((results) => {
+        this.setState({
+          notes: ""
+        })
+        this.props.fetchFavorites()
       })
-      this.props.fetchFavorites()
-    })
   }
 
   deleteFromFavorites = (id) => {
     axios.delete(`/api/favorites/${id}`)
-    .then((results) => {
-      this.props.fetchFavorites()
-    })
+      .then((results) => {
+        this.props.fetchFavorites()
+      })
   }
 
   render() {
     console.log(this.props.favs)
     return (
-        <div className="favorite-container">
-            <div className="section-header"><h3>Favorite Futures</h3></div>
-          <div className="favorite-details">
-            {this.props.favs.map((element) => {
-              return (
-                  <div className="favorite-entry">
-                    <div className="favorite-entry-details">
-                      <span onClick={() => this.deleteFromFavorites(element.id)}>X</span>
-                      <span>{element.future}</span>
-                      <span>{element.glbx_symbol}</span>
-                      <h4>Notes: {element.notes}</h4>
-                    </div>
-                    <div className="new-notes">
-                      <textarea className='favs_input' placeholder="Add notes here:" onChange={(e) => this.setState({notes: e.target.value})}/>
-                      <button className="save-notes" onClick={(e) => {this.updateFavorites(element.id)}}>Add</button>
-                    </div>
-                  </div>
-                )
-              }
-            )}
-          </div>
-
+      <div className="favorite-container">
+        <div className="section-header"><h3>Favorite Futures</h3></div>
+        <div className="favorite-details">
+          {this.props.favs.map((element) => {
+            return (
+              <div className="favorite-entry">
+                <div className="favorite-entry-details">
+                  <span onClick={() => this.deleteFromFavorites(element.id)}>X</span>
+                  <span style={{ padding: "0px 5px" }}>{element.future}</span>
+                  <span>({element.glbx_symbol}) </span>
+                </div>
+                <h style={{ padding: "0px 5px" }}>Notes: {element.notes}</h>
+                <div className="new-notes">
+                  <textarea className='favs_input' placeholder="Add notes here:" onChange={(e) => this.setState({ notes: e.target.value })} />
+                  <button className="save-notes" onClick={(e) => { this.updateFavorites(element.id) }}>Add</button>
+                </div>
+              </div>
+            )
+          }
+          )}
         </div>
+
+      </div>
     )
   }
 }

@@ -31,27 +31,28 @@ class Home extends Component {
       <div className="Home">
         <div className="markets">
           <h2>Market Type</h2>
-          <ol style={{ padding: "10px" }}>Select a Market below to utilize our Futures calculator.</ol>
-          <div className="icon-image">
+          <p>Select a Market below to utilize our Futures calculator.</p>
+          <ol></ol>
+          <div className="market-images">
             <li>
               <img className="icon-image" src={img2} onClick={() => { this.props.history.push(`/futuresDetails/Currencies`) }} />
-              <p>Currency</p>
+              <p className='market-types'>Currency</p>
             </li>
             <li>
-              <img className="icon-image" src={img3} onClick={() => { this.props.history.push(`/futuresDetails/Bonds`) }} />
-              <p>Bonds</p>
+              <img className="icon-image" src={img3} alt="" onClick={() => { this.props.history.push(`/futuresDetails/Bonds`) }} />
+              <p className='market-types'>Bonds</p>
             </li>
             <li>
-              <img className="icon-image" src={img5} onClick={() => { this.props.history.push(`/futuresDetails/Metals`) }} />
-              <p>Metals</p>
+              <img className="icon-image" src={img5} alt="" onClick={() => { this.props.history.push(`/futuresDetails/Metals`) }} />
+              <p className='market-types'>Metals</p>
             </li>
             <li>
-              <img className="icon-image" src={img4} onClick={() => { this.props.history.push(`/futuresDetails/Equity`) }} />
-              <p>Equity</p>
+              <img className="icon-image" src={img4} alt="" onClick={() => { this.props.history.push(`/futuresDetails/Equity`) }} />
+              <p className='market-types'>Equity</p>
             </li>
             <li>
-              <img className="icon-image" src={img6} onClick={() => { this.props.history.push(`/futuresDetails/Energy`) }} />
-              <p>Energy</p>
+              <img className="icon-image" src={img6} alt="" onClick={() => { this.props.history.push(`/futuresDetails/Energy`) }} />
+              <p className='market-types'>Energy</p>
             </li>
           </div>
 
@@ -61,15 +62,15 @@ class Home extends Component {
           })} */}
         </div>
         {/* <div className="mini_calc">
-        <h2>Calculator Placeholder</h2>
-        <form id="my-form">
-          <h3>"Futures Dropdown"</h3>
-          <input type="text" placeholder="# of contracts" />
-          <input type="text" placeholder="Entry" />
-          <input type="password" placeholder="Stop" />
-          <input type="password" placeholder="Target" />
-        </form>
-      </div> */}
+          <h2>Calculator Placeholder</h2>
+          <form id="my-form">
+            <h3>"Futures Dropdown"</h3>
+            <input type="text" placeholder="# of contracts" />
+            <input type="text" placeholder="Entry" />
+            <input type="password" placeholder="Stop" />
+            <input type="password" placeholder="Target" />
+          </form>
+        </div> */}
         <div className="mini_table">
           <h2>Specs Table</h2>
           <p style={{ padding: "10px" }}>Click below to view our Specs Table. This is a breakdown of select Futures contracts and their elements.</p>

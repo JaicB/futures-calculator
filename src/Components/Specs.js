@@ -23,6 +23,7 @@ class Specs extends Component {
     return (
       <div className='Specs'>
         <h2 style={{ padding: "5px", margin: "15px 0px 15px"}}>Futures Specs Table</h2>
+        <h5 style={{ padding: "0px 20px 10px 0" }}>Below is a table of the top Futures Symbols and their relevant data. This is not meant to be a comprehensive list.Rather a list of the top Futures.</h5>
           <table className="specs_table">
             <tr>
               <th>Futures Name</th>

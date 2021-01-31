@@ -3,7 +3,7 @@ import Login from './Login'
 import Home from './Home'
 import Specs from './Specs'
 import FuturesDetails from './FuturesDetails'
-import axios from 'axios'
+
 
 class Display extends Component {
   constructor () {
