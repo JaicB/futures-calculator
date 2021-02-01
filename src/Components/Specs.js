@@ -12,18 +12,19 @@ class Specs extends Component {
 
   componentDidMount() {
     axios.get('/api/all-data')
-    .then((results) => {
-      this.setState({
-        specs: results.data.specsTable
-      })
-    }).catch(e => console.log(e))
+      .then((results) => {
+        this.setState({
+          specs: results.data.specsTable
+        })
+      }).catch(e => console.log(e))
   }
 
   render() {
     return (
       <div className='Specs'>
-        <h2 style={{ padding: "5px", margin: "15px 0px 15px"}}>Futures Specs Table</h2>
-        <h5 style={{ padding: "0px 20px 10px 0" }}>Below is a table of the top Futures Symbols and their relevant data. This is not meant to be a comprehensive list.Rather a list of the top Futures.</h5>
+        <h2 style={{ padding: "0px 5px", margin: "0px 0px 10px" }}>Futures Specs Table</h2>
+        <h5 style={{ padding: "0px 20px 10px 15px" }}>Below is a table of the top Futures Symbols and their relevant data. This is not meant to be a comprehensive list.Rather a list of the top Futures. (scroll to view full table)</h5>
+        <div style={{ maxWidth: "90vw", overflow: "scroll" }}>
           <table className="specs_table">
             <tr>
               <th>Futures Name</th>
@@ -53,10 +54,11 @@ class Specs extends Component {
                 </tr>
               )
             })}
-        </table>
+          </table>
+        </div>
       </div>
     )
-  }  
+  }
 }
 
 export default Specs

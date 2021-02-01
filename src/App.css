@@ -25,7 +25,7 @@ body {
   height:15vh;
   background-color: rgba(53, 65, 112, 0.741);
   align-items: center;
-  padding: 5px 20px 15px 20px;
+  padding: 5px 20px 0px 20px;
   justify-content: space-between;
   font-family: 'Heebo', sans-serif;
   letter-spacing: 1.5px;
@@ -102,7 +102,7 @@ table, th, td {
   
 }
 .specs_table{
-  width: 675px;
+  width: 750px;
   background-color: white;
   overflow: hidden;
 }
@@ -149,6 +149,7 @@ td {
   flex-direction: row;
   align-items: center;
   text-align: center;
+  flex-wrap: wrap;
 }
 .icon-image {
   width: 70px;
@@ -381,7 +382,7 @@ h6 {
   padding: 5px;
   overflow: hidden;
   transition: all 500ms;
-  background-color: #B4DFE5;
+  background-color: #303C6C;
   opacity: 90;
   z-index: 5;
 }
@@ -462,6 +463,7 @@ h6 {
   .image-specs {
     opacity: 0.75;
     width: 450px;
+    max-width: 90vw;
   }
 
   p{
@@ -474,7 +476,11 @@ h6 {
   }
 
   h2 {
-    font-size: 15px;
+    font-size: 20px;
+  }
+
+  h5{
+    font-size: 12px;
   }
 
   .icon-image {
@@ -484,8 +490,16 @@ h6 {
 }
 
 @media (max-width: 550px){
+  /* Calculator View */
   .futuresDetails {
-    padding-left: 15vw;
+    padding-left: 10vw;
     width: 100vw;
   }
+
+  /* Home View */
+  .market-images {
+    max-width: 400px;
+    padding: 30px;
+  }
+
 }

@@ -43,7 +43,7 @@ const Login = (props) => {
             placeholder="Email Address"
             style={{ padding: "5px" }}
             onChange={(e) => setEmail(e.target.value)} />
-          <input
+          <input type="password"
             className='password'
             placeholder="Password"
             style={{ padding: "5px", margin: "15px 0px 0px" }}
@@ -62,7 +62,8 @@ const Login = (props) => {
             placeholder="Email Address / Login"
             style={{ padding: "5px", margin: "15px 0px" }}
             onChange={(e) => setEmail(e.target.value)} />
-          <input className="password"
+          <input type="password"
+            className="password"
             placeholder="Password"
             style={{ padding: "5px" }}
             onChange={(e) => setPassword(e.target.value)} />

@@ -23,9 +23,9 @@ const Header = () => {
         className='hamburger'
         alt='hamburger' />
       <ul className={`mobile-nav-bar ${isMenuOpen ? null : 'mobile-nav-hide'}`}>
-        <li className="mobile-nav-item"><Link to="/home">Home</Link></li>
-        <li className="mobile-nav-item"><Link to="/futuresdetails/Equity">Calculator</Link></li>
-        <li className="mobile-nav-item"><Link to="/specs">Specs Table</Link></li>
+        <li onClick={() => setIsMenuOpen(false)} className="mobile-nav-item"><Link to="/home">Home</Link></li>
+        <li onClick={() => setIsMenuOpen(false)} className="mobile-nav-item"><Link to="/futuresdetails/Equity">Calculator</Link></li>
+        <li onClick={() => setIsMenuOpen(false)} className="mobile-nav-item"><Link to="/specs">Specs Table</Link></li>
       </ul>
     </div>
   )
